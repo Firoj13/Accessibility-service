@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/dotted_grey_white_background"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:text="Whats app message list"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/permission_description"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:text="Please click the below button if you not allow permission, and allow accessibility permission to access features."
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:layout_below="@+id/title"
+        android:textStyle="bold"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="10dp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"/>
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f1f5f8"
+        android:layout_below="@+id/permission_description">
+        <TextView
+            android:id="@+id/countNo"
+            android:layout_width="55dp"
+            android:layout_height="45dp"
+            android:text="Sno."
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_toRightOf="@+id/countNo"
+            android:gravity="center"
+            android:text="Text message"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="2dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@+id/countNo"
+            android:layout_marginBottom="4dp"
+            android:background="#E2E2E2" />
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/permission"
+        android:layout_below="@+id/relative" />
+
+    <TextView
+        android:id="@+id/permission"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_parent_rounded_corner"
+        android:gravity="center"
+        android:onClick="permission"
+        android:padding="5dp"
+        android:text="Please allow the permission "
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        android:textSize="18dp" />
+
+</RelativeLayout>

@@ -12,12 +12,10 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.accessibilityservice.adapter.DataBaseHelper
 import com.example.accessibilityservice.adapter.MessageList
 import com.example.accessibilityservice.adapter.MessageListAdapter
 import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken
 import com.google.gson.Gson
-import java.lang.reflect.Type
 
 class MainActivity : AppCompatActivity() {
 
@@ -63,8 +61,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun checkPermission() {
-        startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-//        startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
+//        startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+        startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
     }
 
     fun permission(view: View) {

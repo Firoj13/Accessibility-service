@@ -21,11 +21,14 @@ class MessageListAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val mHolder = holder as Message_ViewHolder
+
         holder.itemNo.setText((position +1).toString())
         holder.message.setText(messageList.get(position).courseMessage)
+        holder.number.setText(messageList.get(position).number)
     }
 
     override fun getItemCount(): Int {
+
         return messageList.size
     }
 
@@ -33,10 +36,12 @@ class MessageListAdapter(
 
         var itemNo: TextView
         var message: TextView
+        var number: TextView
 
         init {
             itemNo = itemView.findViewById(R.id.countNo);
             message = itemView.findViewById(R.id.message);
+            number = itemView.findViewById(R.id.number);
         }
 
 

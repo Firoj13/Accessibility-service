@@ -46,12 +46,16 @@ public class NotificationListener extends NotificationListenerService {
         SharedPreferences prefs = getSharedPreferences("SHARED_PREFS_FILE", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         Type type = new TypeToken<List<MessageList>>(){}.getType();
-        String preivousMessage = prefs.getString("key","");
+        String preivousMessage = prefs.getString("key",null);
         messageList = gson.fromJson(preivousMessage,type);
 
+        if (messageList == null){
+            messageList = new ArrayList<>();
+        }
         Log.i(TAG, "From: " + from);
         Log.e(TAG, "Message: " + message);
-        messageList.add(new MessageList(message));
+
+        messageList.add(new MessageList(message,from));
 //        messageList.add(message);
 
         SharedPreferences.Editor editor = prefs.edit();
